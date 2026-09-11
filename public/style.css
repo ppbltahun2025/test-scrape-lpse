@@ -1,0 +1,99 @@
+:root {
+  --primary: #1a5d3a;
+  --bg: #f6f7f5;
+  --card-bg: #ffffff;
+  --border: #dde3de;
+  --text: #1f2a24;
+}
+* { box-sizing: border-box; }
+body {
+  font-family: -apple-system, Segoe UI, Roboto, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  margin: 0;
+  padding: 0 0 60px;
+}
+header {
+  background: var(--primary);
+  color: white;
+  padding: 24px 32px;
+}
+header h1 { margin: 0 0 4px; font-size: 22px; }
+.subtitle { margin: 0; opacity: 0.9; font-size: 14px; }
+main {
+  max-width: 900px;
+  margin: 24px auto;
+  padding: 0 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 20px;
+}
+.card h2 { margin-top: 0; font-size: 16px; }
+input[type=text], input[type=number], select {
+  width: 100%;
+  padding: 8px 10px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  margin: 6px 0 14px;
+  font-size: 14px;
+}
+label { font-weight: 600; font-size: 13px; display: block; margin-top: 8px; }
+.checkbox-list {
+  max-height: 220px;
+  overflow-y: auto;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 8px;
+  margin-bottom: 10px;
+}
+.checkbox-list label {
+  font-weight: 400;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 2px;
+}
+.inline-form { display: flex; gap: 8px; margin-top: 8px; }
+button, .button {
+  background: var(--primary);
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  text-decoration: none;
+  display: inline-block;
+  margin-right: 8px;
+}
+button:disabled { background: #a9b8ae; cursor: not-allowed; }
+button.primary { background: #0f7a41; }
+#cancelBtn { background: #a33; }
+.progress-bar {
+  height: 10px;
+  background: #e4e9e5;
+  border-radius: 5px;
+  overflow: hidden;
+  margin: 12px 0 6px;
+}
+#progressFill { height: 100%; width: 0%; background: var(--primary); transition: width .3s; }
+#logBox {
+  background: #10201a;
+  color: #b7f5c5;
+  font-size: 12px;
+  padding: 10px;
+  border-radius: 6px;
+  max-height: 220px;
+  overflow-y: auto;
+  white-space: pre-wrap;
+}
+.hidden { display: none; }
+table { border-collapse: collapse; width: 100%; font-size: 13px; }
+th, td { border: 1px solid var(--border); padding: 6px 8px; text-align: left; }
+th { background: #eef2ef; }

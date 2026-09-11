@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8" />
+<title>SPSE Scraper — Data Pengadaan LPSE Seluruh Indonesia</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>SPSE / LPSE Scraper</h1>
+    <p class="subtitle">Ambil data pengadaan (Tender, Non Tender, Pencatatan) dari portal SPSE INAPROC — satu klik, tanpa console browser.</p>
+  </header>
+
+  <main>
+    <section class="card">
+      <h2>1. Pilih LPSE</h2>
+      <input id="lpseSearch" type="text" placeholder="Cari LPSE (nama atau kode)..." />
+      <div id="lpseList" class="checkbox-list"></div>
+      <details>
+        <summary>LPSE tidak ada di daftar? Tambah manual</summary>
+        <div class="inline-form">
+          <input id="newLpseCode" placeholder="kode (mis. kotamalang)" />
+          <input id="newLpseName" placeholder="Nama LPSE" />
+          <button id="addLpseBtn">Tambah</button>
+        </div>
+      </details>
+    </section>
+
+    <section class="card">
+      <h2>2. Filter</h2>
+      <label>Tahun Anggaran</label>
+      <select id="tahun"></select>
+
+      <label>Jenis Pengadaan</label>
+      <div id="tabList" class="checkbox-list"></div>
+
+      <label><input type="checkbox" id="fetchDetail" /> Ambil detail lanjutan per paket (RUP, pemenang, dsb — lebih lambat)</label>
+
+      <label>Jeda antar-request (ms) — semakin besar semakin sopan ke server SPSE</label>
+      <input id="rateLimitMs" type="number" value="1800" min="500" step="100" />
+    </section>
+
+    <section class="card">
+      <h2>3. Jalankan</h2>
+      <button id="runBtn" class="primary">▶ Jalankan Scraping</button>
+      <button id="cancelBtn" disabled>■ Batalkan</button>
+      <button id="resumeBtn" disabled>↻ Resume Job Terakhir</button>
+      <div id="progressWrap" class="hidden">
+        <div class="progress-bar"><div id="progressFill"></div></div>
+        <div id="progressText"></div>
+        <pre id="logBox"></pre>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>4. Hasil</h2>
+      <div id="resultActions" class="hidden">
+        <a id="downloadXlsx" class="button" href="#">⬇ Download Excel (.xlsx)</a>
+        <a id="downloadCsv" class="button" href="#">⬇ Download CSV</a>
+      </div>
+      <div id="resultTableWrap"></div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

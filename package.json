@@ -1,0 +1,19 @@
+{
+  "name": "spse-scraper",
+  "version": "1.0.0",
+  "description": "Web app scraper data pengadaan SPSE/LPSE (INAPROC) dengan UI satu klik",
+  "main": "src/server/index.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node src/server/index.js",
+    "dev": "node --watch src/server/index.js",
+    "postinstall": "playwright install chromium"
+  },
+  "dependencies": {
+    "better-sqlite3": "^11.3.0",
+    "exceljs": "^4.4.0",
+    "express": "^4.19.2",
+    "playwright": "^1.47.0",
+    "uuid": "^9.0.1"
+  }
+}
